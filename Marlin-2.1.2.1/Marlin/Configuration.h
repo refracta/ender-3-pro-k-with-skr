@@ -137,7 +137,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ender-3 Pro (V.F2)"
+#define CUSTOM_MACHINE_NAME "Ender-3 Pro (V.F8)"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -579,7 +579,7 @@
 
 #if TEMP_SENSOR_BED
   #define TEMP_BED_RESIDENCY_TIME     10  // (seconds) Time to wait for bed to "settle" in M190
-  #define TEMP_BED_WINDOW              4  // (°C) Temperature proximity for the "temperature reached" timer
+  #define TEMP_BED_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
   #define TEMP_BED_HYSTERESIS          3  // (°C) Temperature proximity considered "close enough" to the target
 #endif
 
@@ -1485,11 +1485,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -40, -6, -3.0 }
+#define NOZZLE_TO_PROBE_OFFSET { -40, -6, -3 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 30
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1696,15 +1696,15 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 233
+#define X_BED_SIZE 235
 #define Y_BED_SIZE 235
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS 2
-#define Y_MIN_POS -4
+#define X_MIN_POS 0
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 256
-#define Y_MAX_POS Y_BED_SIZE
+#define X_MAX_POS X_BED_SIZE
+#define Y_MAX_POS X_BED_SIZE
 #define Z_MAX_POS 250
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
@@ -2084,6 +2084,9 @@
 //#define MANUAL_U_HOME_POS 0
 //#define MANUAL_V_HOME_POS 0
 //#define MANUAL_W_HOME_POS 0
+#define MANUAL_X_HOME_POS -6
+#define MANUAL_Y_HOME_POS -8
+// Original firmware value = (X= -10, Y= -10)
 
 /**
  * Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
@@ -2100,7 +2103,7 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), 300 }
+#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (300) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2217,13 +2220,13 @@
 // Preheat Constants - Up to 10 are supported without changes
 //
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND  0
+#define PREHEAT_1_TEMP_HOTEND 0
 #define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND  0
+#define PREHEAT_2_TEMP_HOTEND 0
 #define PREHEAT_2_TEMP_BED    100
 #define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
@@ -2552,7 +2555,7 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-//#define SPEAKER
+#define SPEAKER
 
 //
 // The duration and frequency for the UI feedback sound.

@@ -1420,7 +1420,7 @@
   //#define TURBO_BACK_MENU_ITEM
 
   // Insert a menu for preheating at the top level to allow for quick access
-#define PREHEAT_SHORTCUT_MENU_ITEM
+  #define PREHEAT_SHORTCUT_MENU_ITEM
 
 #endif // HAS_MARLINUI_MENU
 
@@ -1444,7 +1444,7 @@
   #define STATUS_MESSAGE_SCROLLING
 
   // Apply a timeout to low-priority status messages
-  #define STATUS_MESSAGE_TIMEOUT_SEC 10 // (seconds)
+  #define STATUS_MESSAGE_TIMEOUT_SEC 30 // (seconds)
 
   // On the Info Screen, display XY with one decimal place when possible
   //#define LCD_DECIMAL_SMALL_XY
@@ -2640,7 +2640,7 @@
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
                                                   // This short retract is done immediately, before parking the nozzle.
-  #define FILAMENT_CHANGE_UNLOAD_FEEDRATE      6  // (mm/s) Unload filament feedrate. This can be pretty fast.
+  #define FILAMENT_CHANGE_UNLOAD_FEEDRATE     6  // (mm/s) Unload filament feedrate. This can be pretty fast.
   #define FILAMENT_CHANGE_UNLOAD_ACCEL        25  // (mm/s^2) Lower acceleration may allow a faster feedrate.
   #define FILAMENT_CHANGE_UNLOAD_LENGTH      400  // (mm) The length of filament for a complete unload.
                                                   //   For Bowden, the full length of the tube and nozzle.

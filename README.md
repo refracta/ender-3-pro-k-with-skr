@@ -10,4 +10,4 @@ Marlin 2.1.2.1 기반 펌웨어입니다.
 
 위 펌웨어의 설정을 참고하여 제작되었습니다. 
 
-[펌웨어 다운로드](https://github.com/refracta/ender-3-pro-k-custom-firmware/releases/tag/V.F8)
+[펌웨어 다운로드](https://github.com/refracta/ender-3-pro-k-with-skr/releases/tag/V.F8)
